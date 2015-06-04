@@ -16,6 +16,15 @@ class AddressBook
     
     @entries.insert(index, Entry.new(name, phone, email))    
 
+  end
+
+  def remove_entry(name)
+    if @entries.include?(name)
+       @entries.delete(name)
+    else
+      puts "Given name is not in the book"
+    end     
+
   end  
 
 end  
