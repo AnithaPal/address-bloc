@@ -163,8 +163,8 @@ RSpec.describe AddressBook do
      end 
 
   end  
-
-
+  
+end
 
   #context for remove_entry method
 
@@ -184,4 +184,4 @@ RSpec.describe AddressBook do
 
 
   # end
-end  
+
