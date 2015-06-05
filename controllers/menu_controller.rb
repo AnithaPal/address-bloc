@@ -116,9 +116,15 @@ class MenuController
        puts "#{file_name} is not a valid CSV file, please enter the name of a valid CSV file"
        read_csv
      end
-   end
-      
   end
+      
+  
+
+  def delete_entry(entry)
+    @address_book.entries.delete(entry)
+    puts "#{entry.name} has been deleted"
+
+  end  
 
 
 
