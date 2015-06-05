@@ -1,4 +1,5 @@
  require_relative "entry.rb"
+ require "csv"
 class AddressBook
   attr_accessor :entries
   def initialize
@@ -25,6 +26,10 @@ class AddressBook
       puts "Given name is not in the book"
     end     
 
+  end  
+
+
+  def import_from_csv(file_name)
   end  
 
 end  
