@@ -49,10 +49,10 @@ RSpec.describe AddressBook do
 
 
 
-  #context to import fromcsv file
+  #context to import from csv file
   #Test that AddressBook's .import_from_csv() method is working as expected
   context ".import_from_csv" do
-    it "imports teh correct number of entries" do
+    it "imports the correct number of entries" do
       book.import_from_csv("entries.csv")
       book_size = book.entries.size
       # Check the size of the entries in AddressBook
@@ -108,7 +108,17 @@ RSpec.describe AddressBook do
        #expect(entry_five.phone_number).to eql "555-555-5555"
        #expect(entry.email).to eql "sussie@blocmail.com"
      end
-  end  
+     #Assignment cp23: context to check import_from_csv(entries_2.csv)
+     it "imports the correct number of entries" do
+      book.import_from_csv("entries_2.csv")
+      book_size = book.entries.size
+      # Check the size of the entries in AddressBook
+      expect(book_size).to eql 3
+    end
+  end 
+
+  
+
 
   #context for remove_entry method
 
