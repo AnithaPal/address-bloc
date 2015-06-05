@@ -55,5 +55,10 @@ class AddressBook
      end
      return nil
    end
+
+   def iterative_search(name)
+
+    nil
+  end  
 end
 
