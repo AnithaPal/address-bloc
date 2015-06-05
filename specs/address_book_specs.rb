@@ -5,7 +5,7 @@ RSpec.describe AddressBook do
   #create a method and use it 5 times.
   def check_entry(entry, expected_name, expected_number, expected_email)
     expect(entry.name).to eql expected_name
-    expect(entry.phone_number).eo eql expected_number
+    expect(entry.phone_number).to eql expected_number
     expect(entry.email).to eql expected_email
   end 
 
