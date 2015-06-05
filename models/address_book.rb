@@ -19,14 +19,14 @@ class AddressBook
 
   end
 
-  def remove_entry(name)
-    if @entries.include?(name)
-       @entries.delete(name)
-    else
-      puts "Given name is not in the book"
-    end     
+  # def remove_entry(name)
+  #   if @entries.include?(name)
+  #      @entries.delete(name)
+  #   else
+  #     puts "Given name is not in the book"
+  #   end     
 
-  end  
+  # end  
 
 
   def import_from_csv(file_name)
@@ -37,6 +37,10 @@ class AddressBook
       add_entry(row_hash["name"], row_hash["phone_number"], row_hash["email"])
     end
     return csv.count
+  end 
+
+  def binary_search(name)
+   return nil
   end  
 
 end  

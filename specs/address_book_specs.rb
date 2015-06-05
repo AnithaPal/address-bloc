@@ -52,7 +52,7 @@ RSpec.describe AddressBook do
   #context to import fromcsv file
   #Test that AddressBook's .import_from_csv() method is working as expected
   context ".import_from_csv" do
-    it "imports teh correct number of entries" do
+    it "imports the correct number of entries" do
       book.import_from_csv("entries.csv")
       book_size = book.entries.size
       # Check the size of the entries in AddressBook
@@ -110,22 +110,38 @@ RSpec.describe AddressBook do
      end
   end  
 
-  #context for remove_entry method
 
-  context ".remove_entry" do
-    it "it removes only one entry from the address book" do
-    #book = AddressBook.new
-    book.remove_entry('Ada Lovelace')
-    expect(book.entries.size).eql? 0
+  #context for binary search method
+  context "binary_search" do
+    it "searches address book for a non-existant entry" do
+
+      book.import_from_csv("entries.csv")
+      entry = book.binary_search("Dan")
+      expect(entry).to be_nil
+      
+
     end
 
-    xit "remove correct information from the entries" do
-      #book = AddressBook.new
-      expect(book.name).not_to eql? (book.name)
-      expect(book.phone_number).not_to eql? (book.phone_number)
-      expect(book.email).not_to eql? (book.email)
-    end  
+  end  
 
 
-  end
+
+  #context for remove_entry method
+
+  # context ".remove_entry" do
+  #   it "it removes only one entry from the address book" do
+  #   #book = AddressBook.new
+  #   book.remove_entry('Ada Lovelace')
+  #   expect(book.entries.size).eql? 0
+  #   end
+
+  #   xit "remove correct information from the entries" do
+  #     #book = AddressBook.new
+  #     expect(book.name).not_to eql? (book.name)
+  #     expect(book.phone_number).not_to eql? (book.phone_number)
+  #     expect(book.email).not_to eql? (book.email)
+  #   end  
+
+
+  # end
 end  
