@@ -18,13 +18,12 @@ class AddressBook
 
   end
 
-  def remove_entry(name)
-    if @entries.include?(name)
-       @entries.delete(name)
+  def remove_entry(entry)
+    if @entries.include?(entry)
+       @entries.delete(entry)
     else
       puts "Given name is not in the book"
     end     
-
   end  
 
 end  
