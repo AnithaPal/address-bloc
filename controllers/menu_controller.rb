@@ -98,6 +98,10 @@ class MenuController
   end
 
   def search_entry
+    system "clear"
+    print "Search by Name: "
+    name = gets.chomp
+    @address_book.binary_search(name)
   end
 
   def read_csv

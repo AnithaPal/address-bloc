@@ -63,7 +63,7 @@ class AddressBook
     while(index <= entries.length-1)
 
        if entries[index].name == name
-        return entry
+        return entries[index]
        end 
 
        index += 1
