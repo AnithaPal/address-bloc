@@ -202,12 +202,16 @@ class MenuController
    end
 
    def demolish
-    puts "Entries: #{@address_book.entries}"
-    @address_book.entries.each do |entry|
-      @address_book.entries.each do |entry|
+    index = 0
 
-      puts "entry: #{entry.inspect}"
-      delete_entry(entry)
+   while (index <= @address_book.entries.length - 1)
+    
+          entry = @address_book.entries[index]
+          puts entry
+    
+          delete_entry(entry)
+
+          index += 1
       
     end
 
