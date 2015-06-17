@@ -7,7 +7,7 @@ class MenuController
   end
   
   def main_menu
-    puts "Main menu - #{address_book.entries.count} entries "
+    puts "Main menu - #{@address_book.entries.count} entries "
     puts "1 - View all entries"
     puts "2 - Create an entry"
     puts "3 - Search for an entry"
@@ -40,7 +40,14 @@ class MenuController
       main_menu
 
     when 5
-      demolish
+      system "clear"
+      print "Are you sure you want to delete? press(Y/N)"
+      if gets.chomp.downcase == 'y'
+          demolish
+          main_menu
+      else
+         main_menu    
+      end   
     when 6
       puts "Good-bye"
       # exiting from the program without giving error
@@ -56,9 +63,9 @@ class MenuController
   def view_all_entries
     p @address_book
     @address_book.entries.each do |entry|
-    system "clear"
-    puts entry.to_s
-    entry_submenu(entry)
+      system "clear"
+      puts entry.to_s
+      entry_submenu(entry)
     end 
     #system "clear"
     puts "End of entries"
@@ -195,13 +202,16 @@ class MenuController
    end
 
    def demolish
+    puts "Entries: #{@address_book.entries}"
     @address_book.entries.each do |entry|
-      
+      @address_book.entries.each do |entry|
+
+      puts "entry: #{entry.inspect}"
       delete_entry(entry)
       
     end
 
-    system "clear"
+    # system "clear"
     puts "All the entries has been deleted successfully"
 
    end 
