@@ -202,18 +202,31 @@ class MenuController
    end
 
    def demolish
-    index = 0
+    # index = 0
 
-   while (index <= @address_book.entries.length - 1)
+   # while (index <= @address_book.entries.length - 1)
     
-          entry = @address_book.entries[index]
-          puts entry
+   #        entry = @address_book.entries[index]
+   #        puts entry
     
-          delete_entry(entry)
+   #        delete_entry(entry)
 
-          index += 1
+   #        index += 1
       
-    end
+   #  end
+
+   #   i = 0
+   #  while @address_book.entries.count > 0 do
+   #    if delete_entry(@address_book.entries[i])
+   #      i += 1
+   #    end
+   #  end
+
+    while @address_book.entries.count > 0
+       @address_book.entries.each do |entry|
+         delete_entry(entry)
+       end
+     end
 
     # system "clear"
     puts "All the entries has been deleted successfully"
